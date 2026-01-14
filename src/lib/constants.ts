@@ -3,11 +3,11 @@
  */
 
 export const APP_TITLE = '🍳 Recipe Creator';
-export const APP_DESCRIPTION = 'Finde und speichere deine Lieblingsrezepte';
+export const APP_DESCRIPTION = 'Find and save your favorite recipes';
 
 // Navigation links
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
-  { href: '/recipes', label: 'Rezepte' },
-  { href: '/cookbook', label: 'Mein Kochbuch' },
+  { href: '/recipes', label: 'Recipes' },
+  { href: '/cookbook', label: 'My Cookbook' },
 ];

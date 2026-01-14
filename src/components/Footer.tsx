@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className="text-sm opacity-70">
-            © 2025 {APP_TITLE}. Alle Rechte vorbehalten.
+            WBS Group Project Ben & Max with Lesson 59, Topic 1
           </p>
         </div>
       </div>

@@ -13,9 +13,10 @@ export function getPool() {
 
     pool = new Pool({
       connectionString: process.env.DATABASE_URL,
-      ssl: {
-        rejectUnauthorized: false,
-      },
+      ssl: process.env.NODE_ENV === 'production' ? true : { rejectUnauthorized: false },
+      max: 20,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 2000,
     });
   }
   return pool;
@@ -31,5 +32,13 @@ export async function query(text, params) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('Database Error:', errorMessage);
     return { data: null, error: errorMessage };
+  }
+}
+
+// Graceful shutdown for clean pool closure
+export async function closePool() {
+  if (pool) {
+    await pool.end();
+    pool = null;
   }
 }

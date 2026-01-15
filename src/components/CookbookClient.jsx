@@ -6,21 +6,66 @@ import { removeRecipeAction, updateNoteAction } from '@/app/cookbook/actions';
 export default function CookbookClient({ entries }) {
   const [editingId, setEditingId] = useState(null);
   const [notes, setNotes] = useState({});
+  const [savingId, setSavingId] = useState(null);
+  const [removingId, setRemovingId] = useState(null);
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
 
   const handleRemove = async (cookbookId) => {
-    await removeRecipeAction(cookbookId);
+    if (!confirm('Are you sure you want to remove this recipe from your cookbook?')) {
+      return;
+    }
+
+    setRemovingId(cookbookId);
+    setError(null);
+    try {
+      const response = await removeRecipeAction(cookbookId);
+      if (response.error) {
+        setError(response.error);
+      } else {
+        setSuccessMessage('Recipe removed successfully!');
+        setTimeout(() => setSuccessMessage(null), 3000);
+      }
+    } finally {
+      setRemovingId(null);
+    }
   };
 
   const handleSaveNote = async (cookbookId) => {
-    const formData = new FormData();
-    formData.append('cookbookId', cookbookId.toString());
-    formData.append('notes', notes[cookbookId] || '');
-    await updateNoteAction({}, formData);
-    setEditingId(null);
+    setSavingId(cookbookId);
+    setError(null);
+    try {
+      const formData = new FormData();
+      formData.append('cookbookId', cookbookId.toString());
+      formData.append('notes', notes[cookbookId] || '');
+      const response = await updateNoteAction({}, formData);
+      if (response.error) {
+        setError(response.error);
+      } else {
+        setSuccessMessage('Note saved successfully!');
+        setEditingId(null);
+        const newNotes = { ...notes };
+        delete newNotes[cookbookId];
+        setNotes(newNotes);
+        setTimeout(() => setSuccessMessage(null), 3000);
+      }
+    } finally {
+      setSavingId(null);
+    }
   };
 
   return (
     <div className="space-y-6">
+      {successMessage && (
+        <div className="alert alert-success" role="status">
+          <span>{successMessage}</span>
+        </div>
+      )}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span>{error}</span>
+        </div>
+      )}
       {entries.map((entry) => (
         <div key={entry.id} className="card bg-base-100 shadow-md">
           <div className="card-body">
@@ -43,12 +88,14 @@ export default function CookbookClient({ entries }) {
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleSaveNote(entry.id)}
+                    disabled={savingId === entry.id}
                     className="btn btn-sm btn-primary"
                   >
-                    Save
+                    {savingId === entry.id ? 'Saving...' : 'Save'}
                   </button>
                   <button
                     onClick={() => setEditingId(null)}
+                    disabled={savingId === entry.id}
                     className="btn btn-sm btn-ghost"
                   >
                     Cancel
@@ -74,9 +121,10 @@ export default function CookbookClient({ entries }) {
                   </button>
                   <button
                     onClick={() => handleRemove(entry.id)}
+                    disabled={removingId === entry.id}
                     className="btn btn-sm btn-error"
                   >
-                    Remove
+                    {removingId === entry.id ? 'Removing...' : 'Remove'}
                   </button>
                 </div>
               </div>

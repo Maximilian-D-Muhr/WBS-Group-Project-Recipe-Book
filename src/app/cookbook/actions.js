@@ -5,9 +5,17 @@ import { addToCookbook, removeFromCookbook, updateCookbookNote } from '@/lib/que
 
 export async function addRecipeAction(recipeId) {
   try {
+    // Input validation
+    if (!Number.isInteger(recipeId) || recipeId <= 0) {
+      return { error: 'Invalid recipe ID' };
+    }
+
     const result = await addToCookbook(recipeId);
     if (result.error) {
-      return { error: 'Failed to add recipe to cookbook' };
+      return { error: result.error };
+    }
+    if (!result.wasAdded) {
+      return { error: 'Recipe is already in your cookbook' };
     }
     revalidatePath('/cookbook');
     revalidatePath(`/recipes/${recipeId}`);
@@ -19,9 +27,14 @@ export async function addRecipeAction(recipeId) {
 
 export async function removeRecipeAction(cookbookId) {
   try {
+    // Input validation
+    if (!Number.isInteger(cookbookId) || cookbookId <= 0) {
+      return { error: 'Invalid cookbook ID' };
+    }
+
     const result = await removeFromCookbook(cookbookId);
     if (result.error) {
-      return { error: 'Failed to remove recipe from cookbook' };
+      return { error: result.error };
     }
     revalidatePath('/cookbook');
     return { success: true, message: 'Recipe removed from cookbook' };
@@ -35,13 +48,23 @@ export async function updateNoteAction(prevState, formData) {
     const cookbookId = formData.get('cookbookId');
     const notes = formData.get('notes');
 
+    // Input validation
     if (!cookbookId) {
       return { error: 'Invalid request' };
     }
 
-    const result = await updateCookbookNote(parseInt(cookbookId), notes || null);
+    const parsedId = parseInt(cookbookId, 10);
+    if (!Number.isInteger(parsedId) || parsedId <= 0) {
+      return { error: 'Invalid cookbook ID' };
+    }
+
+    if (notes && typeof notes !== 'string') {
+      return { error: 'Notes must be text' };
+    }
+
+    const result = await updateCookbookNote(parsedId, notes || null);
     if (result.error) {
-      return { error: 'Failed to save note' };
+      return { error: result.error };
     }
 
     revalidatePath('/cookbook');

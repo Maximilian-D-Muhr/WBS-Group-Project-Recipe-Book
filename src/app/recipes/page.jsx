@@ -2,11 +2,7 @@ import { getAllRecipes, searchRecipes } from '@/lib/queries';
 import SearchBar from '@/components/SearchBar';
 import RecipeCard from '@/components/RecipeCard';
 
-interface RecipesPageProps {
-  searchParams: Promise<{ q?: string }>;
-}
-
-export default async function RecipesPage({ searchParams }: RecipesPageProps) {
+export default async function RecipesPage({ searchParams }) {
   const { q } = await searchParams;
 
   let recipes = [];

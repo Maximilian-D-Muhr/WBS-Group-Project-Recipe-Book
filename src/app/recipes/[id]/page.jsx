@@ -2,13 +2,11 @@ import { notFound } from 'next/navigation';
 import { getRecipeById, isInCookbook } from '@/lib/queries';
 import RecipeDetailClient from '@/components/RecipeDetailClient';
 
-type Params = Promise<{ id: string }>;
-
-export default async function RecipeDetailPage({ params }: { params: Params }) {
+export default async function RecipeDetailPage({ params }) {
   const { id } = await params;
   const recipeId = parseInt(id);
   const { data: recipe, error } = await getRecipeById(recipeId);
-  const { data: inCookbook } = await isInCookbook(recipeId);
+  const { data: inCookbookData } = await isInCookbook(recipeId);
 
   if (error || !recipe) {
     notFound();
@@ -35,7 +33,7 @@ export default async function RecipeDetailPage({ params }: { params: Params }) {
         <section>
           <h2 className="text-2xl font-bold mb-4">Ingredients</h2>
           <ul className="list-disc list-inside space-y-2">
-            {ingredients.map((ingredient: string, index: number) => (
+            {ingredients.map((ingredient, index) => (
               <li key={index} className="text-base-content/80">
                 {ingredient}
               </li>
@@ -51,7 +49,7 @@ export default async function RecipeDetailPage({ params }: { params: Params }) {
         </section>
       </div>
 
-      <RecipeDetailClient recipeId={recipeId} inCookbook={inCookbook || false} />
+      <RecipeDetailClient recipeId={recipeId} inCookbook={inCookbookData || false} />
     </article>
   );
 }

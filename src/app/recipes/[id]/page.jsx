@@ -12,11 +12,24 @@ export default async function RecipeDetailPage({ params }) {
     notFound();
   }
 
-  const ingredients = JSON.parse(recipe.ingredients || '[]');
-  const totalTime = recipe.prep_time + recipe.cook_time;
+  let ingredients = [];
+  try {
+    // Clean up the ingredients string (trim whitespace that could be from database)
+    const ingredientsStr = (recipe.ingredients || '[]').trim();
+    const parsed = JSON.parse(ingredientsStr);
+    // If it's an array, use it directly; if it's an object, extract values
+    ingredients = Array.isArray(parsed)
+      ? parsed.map(ing => typeof ing === 'string' ? ing : (ing.item || JSON.stringify(ing)))
+      : [];
+  } catch (e) {
+    // If JSON parsing fails, fall back to empty array
+    console.error('Failed to parse ingredients:', e.message);
+    ingredients = [];
+  }
+  const totalTime = (recipe.prep_time || 0) + (recipe.cook_time || 0);
 
   return (
-    <article className="max-w-3xl mx-auto">
+    <article className="max-w-3xl mx-auto px-4 py-8">
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{recipe.title}</h1>
         <p className="text-lg text-base-content/70 mb-6">{recipe.description}</p>
@@ -32,13 +45,17 @@ export default async function RecipeDetailPage({ params }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <section>
           <h2 className="text-2xl font-bold mb-4">Ingredients</h2>
-          <ul className="list-disc list-inside space-y-2">
-            {ingredients.map((ingredient, index) => (
-              <li key={index} className="text-base-content/80">
-                {ingredient}
-              </li>
-            ))}
-          </ul>
+          {ingredients.length > 0 ? (
+            <ul className="list-disc list-inside space-y-2">
+              {ingredients.map((ingredient, index) => (
+                <li key={index} className="text-base-content/80">
+                  {ingredient}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-base-content/60 italic">No ingredients available</p>
+          )}
         </section>
 
         <section>

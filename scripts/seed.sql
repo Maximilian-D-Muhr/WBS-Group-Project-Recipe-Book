@@ -17,7 +17,7 @@ Step 7: Season with black pepper and serve immediately',
     10,
     20,
     4,
-    'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=600&fit=crop'
+    'https://unsplash.com/photos/dvgjof0_TP8/download?w=600&h=600&fit=crop'
   ),
   (
     'Caesar Salad',

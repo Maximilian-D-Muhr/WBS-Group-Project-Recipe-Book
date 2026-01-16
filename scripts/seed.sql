@@ -17,7 +17,7 @@ Step 7: Season with black pepper and serve immediately',
     10,
     20,
     4,
-    NULL
+    'https://images.unsplash.com/photo-1612874742237-6526221fcf4f?w=600&h=600&fit=crop'
   ),
   (
     'Caesar Salad',
@@ -32,7 +32,7 @@ Step 6: Season with black pepper and serve',
     15,
     0,
     2,
-    NULL
+    'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=600&fit=crop'
   ),
   (
     'Chocolate Chip Cookies',
@@ -50,7 +50,7 @@ Step 9: Cool on baking sheet for 2 minutes, then transfer to wire rack',
     15,
     12,
     24,
-    NULL
+    'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop'
   ),
   (
     'Chicken Stir Fry',
@@ -69,7 +69,7 @@ Step 10: Serve hot with rice',
     20,
     15,
     4,
-    NULL
+    'https://images.unsplash.com/photo-1609501676725-7186f017a4b7?w=600&h=600&fit=crop'
   ),
   (
     'Margherita Pizza',
@@ -88,7 +88,7 @@ Step 10: Slice and serve immediately',
     15,
     15,
     2,
-    NULL
+    'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=600&h=600&fit=crop'
   );
 
 -- Verify data inserted

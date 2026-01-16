@@ -53,6 +53,16 @@ export default async function RecipeDetailPage({ params }) {
         <h1 className="text-4xl font-bold mb-4">{recipe.title}</h1>
         <p className="text-lg text-base-content/70 mb-6">{recipe.description}</p>
 
+        {recipe.image_url && (
+          <div className="w-full max-w-md mx-auto mb-6 aspect-square overflow-hidden rounded-lg shadow-lg">
+            <img
+              src={recipe.image_url}
+              alt={recipe.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+
         <div className="flex flex-wrap gap-3">
           <span className="badge badge-outline">Prep: {recipe.prep_time} min</span>
           <span className="badge badge-outline">Cook: {recipe.cook_time} min</span>

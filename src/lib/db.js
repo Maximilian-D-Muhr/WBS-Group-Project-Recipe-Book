@@ -11,9 +11,24 @@ export function getPool() {
       throw new Error('DATABASE_URL environment variable is not set');
     }
 
+    // Configure SSL based on environment
+    // Using explicit sslmode in URL to avoid deprecation warnings
+    const isDevelopment = process.env.NODE_ENV === 'development' || !process.env.NODE_ENV;
+    const sslMode = isDevelopment ? 'require' : 'verify-full';
+
+    // Build connection string with proper SSL mode
+    let connectionString = process.env.DATABASE_URL;
+
+    // Remove old-style ssl parameter from URL if present and add sslmode parameter
+    connectionString = connectionString.replace(/[\?&]sslmode=[a-z-]+/i, '');
+
+    if (!connectionString.includes('sslmode=')) {
+      const separator = connectionString.includes('?') ? '&' : '?';
+      connectionString += `${separator}sslmode=${sslMode}`;
+    }
+
     pool = new Pool({
-      connectionString: process.env.DATABASE_URL,
-      ssl: process.env.NODE_ENV === 'production' ? true : { rejectUnauthorized: false },
+      connectionString,
       max: 20,
       idleTimeoutMillis: 30000,
       connectionTimeoutMillis: 2000,

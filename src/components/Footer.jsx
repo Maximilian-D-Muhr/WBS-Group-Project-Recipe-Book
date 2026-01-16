@@ -1,5 +1,9 @@
 import { APP_TITLE } from '@/lib/constants';
 
+/**
+ * Footer with copyright and project information
+ * @returns {JSX.Element}
+ */
 export default function Footer() {
   return (
     <footer className="bg-base-200 text-base-content py-8 border-t">

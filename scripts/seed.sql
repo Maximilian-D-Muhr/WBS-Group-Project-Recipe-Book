@@ -17,7 +17,7 @@ Step 7: Season with black pepper and serve immediately',
     10,
     20,
     4,
-    'https://unsplash.com/photos/dvgjof0_TP8/download?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=600&fit=crop'
   ),
   (
     'Caesar Salad',
@@ -32,7 +32,7 @@ Step 6: Season with black pepper and serve',
     15,
     0,
     2,
-    'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=600&fit=crop'
   ),
   (
     'Chocolate Chip Cookies',
@@ -50,7 +50,7 @@ Step 9: Cool on baking sheet for 2 minutes, then transfer to wire rack',
     15,
     12,
     24,
-    'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&h=600&fit=crop'
   ),
   (
     'Chicken Stir Fry',
@@ -69,7 +69,7 @@ Step 10: Serve hot with rice',
     20,
     15,
     4,
-    'https://images.unsplash.com/photo-1609501676725-7186f017a4b7?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1568299869110-461d8dd19601?w=600&h=600&fit=crop'
   ),
   (
     'Margherita Pizza',
@@ -206,7 +206,7 @@ Step 8: Slice and serve with your favorite side',
     5,
     12,
     2,
-    'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=600&h=600&fit=crop'
   ),
   (
     'Pasta Carbonara',
@@ -223,7 +223,7 @@ Step 8: Season with black pepper and serve',
     5,
     15,
     4,
-    'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1645112411341-6c4ee32510d8?w=600&h=600&fit=crop'
   ),
   (
     'Pancakes',
@@ -240,7 +240,7 @@ Step 8: Serve warm with butter',
     10,
     20,
     4,
-    'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=600&fit=crop'
   ),
   (
     'Pad Thai',
@@ -258,7 +258,7 @@ Step 9: Serve with lime wedges',
     20,
     15,
     2,
-    'https://images.unsplash.com/photo-1568299869110-461d8dd19601?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1481070414601-52ec2a4bacf7?w=600&h=600&fit=crop'
   ),
   (
     'Burger',
@@ -275,7 +275,7 @@ Step 8: Serve immediately',
     10,
     15,
     4,
-    'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=600&h=600&fit=crop'
   ),
   (
     'Quesadilla',
@@ -292,7 +292,7 @@ Step 8: Serve with sour cream and salsa',
     10,
     10,
     2,
-    'https://images.unsplash.com/photo-1582369834552-24a216bb9914?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1565229656933-4b7ce993cab9?w=600&h=600&fit=crop'
   ),
   (
     'Grilled Salmon',
@@ -309,7 +309,7 @@ Step 8: Serve with roasted vegetables',
     5,
     10,
     4,
-    'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1580959375944-abd7e991b971?w=600&h=600&fit=crop'
   ),
   (
     'Vegetable Curry',
@@ -326,7 +326,7 @@ Step 8: Serve with basmati rice or naan',
     15,
     30,
     4,
-    'https://images.unsplash.com/photo-1555939594-58d7cb561818?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1476124369162-f0bd1e1b2e25?w=600&h=600&fit=crop'
   ),
   (
     'Tiramisu',
@@ -377,7 +377,7 @@ Step 8: Enjoy this British classic!',
     15,
     25,
     2,
-    'https://images.unsplash.com/photo-1590929033100-9f60a05a9d82?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1534080564419-4481377183f0?w=600&h=600&fit=crop'
   ),
   (
     'Smoothie Bowl',
@@ -411,7 +411,7 @@ Step 8: Eat immediately while hot',
     10,
     30,
     1,
-    'https://images.unsplash.com/photo-1562547256-e6e6a86e43e0?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1568050559173-a58ac90e0e6b?w=600&h=600&fit=crop'
   ),
   (
     'Caprese Salad',
@@ -462,7 +462,7 @@ Step 8: Sprinkle with red pepper flakes and serve',
     5,
     10,
     1,
-    'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1606220945770-6c3cfe3f3330?w=600&h=600&fit=crop'
   ),
   (
     'Guacamole',
@@ -479,7 +479,7 @@ Step 8: Serve immediately with tortilla chips',
     10,
     0,
     4,
-    'https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1611214155371-62535016515f?w=600&h=600&fit=crop'
   ),
   (
     'Minestrone Soup',
@@ -496,7 +496,7 @@ Step 8: Season with salt, pepper, and fresh basil',
     15,
     35,
     6,
-    'https://images.unsplash.com/photo-1547592166-7aae4d755b86?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1609137253924-643f82d67d12?w=600&h=600&fit=crop'
   ),
   (
     'Brownies',
@@ -530,7 +530,7 @@ Step 8: Serve immediately',
     10,
     15,
     4,
-    'https://images.unsplash.com/photo-1612874742237-6526221fcf4f?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1604959597512-b659ca7268f4?w=600&h=600&fit=crop'
   ),
   (
     'Falafel',

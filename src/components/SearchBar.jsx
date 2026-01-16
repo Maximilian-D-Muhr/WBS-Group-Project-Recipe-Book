@@ -3,6 +3,10 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
+/**
+ * Search form for filtering recipes by title or description
+ * @returns {JSX.Element}
+ */
 export default function SearchBar() {
   const router = useRouter();
   const searchParams = useSearchParams();

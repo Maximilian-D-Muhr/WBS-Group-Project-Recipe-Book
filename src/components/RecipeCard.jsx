@@ -1,5 +1,10 @@
 import Link from 'next/link';
 
+/**
+ * Individual recipe card preview with title, description, and time/servings
+ * @param {Object} recipe - Recipe data object
+ * @returns {JSX.Element}
+ */
 export default function RecipeCard({ recipe }) {
   const totalTime = recipe.prep_time + recipe.cook_time;
 

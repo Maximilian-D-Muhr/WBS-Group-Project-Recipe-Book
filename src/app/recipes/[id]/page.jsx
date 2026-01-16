@@ -14,8 +14,27 @@ export default async function RecipeDetailPage({ params }) {
 
   let ingredients = [];
   try {
-    // Clean up the ingredients string (trim whitespace that could be from database)
-    const ingredientsStr = (recipe.ingredients || '[]').trim();
+    // Handle ingredients that might be a Buffer, object, or string from database
+    let ingredientsStr = '[]';
+
+    if (recipe.ingredients) {
+      if (typeof recipe.ingredients === 'string') {
+        ingredientsStr = recipe.ingredients;
+      } else if (Buffer.isBuffer(recipe.ingredients)) {
+        // Convert Buffer to string
+        ingredientsStr = recipe.ingredients.toString('utf-8');
+      } else if (typeof recipe.ingredients === 'object') {
+        // Already parsed object
+        ingredientsStr = JSON.stringify(recipe.ingredients);
+      } else {
+        // Fallback to empty array
+        ingredientsStr = '[]';
+      }
+    }
+
+    // Trim whitespace
+    ingredientsStr = ingredientsStr.trim();
+
     const parsed = JSON.parse(ingredientsStr);
     // If it's an array, use it directly; if it's an object, extract values
     ingredients = Array.isArray(parsed)
@@ -23,7 +42,7 @@ export default async function RecipeDetailPage({ params }) {
       : [];
   } catch (e) {
     // If JSON parsing fails, fall back to empty array
-    console.error('Failed to parse ingredients:', e.message);
+    console.error('Failed to parse ingredients for recipe', recipeId, ':', e.message);
     ingredients = [];
   }
   const totalTime = (recipe.prep_time || 0) + (recipe.cook_time || 0);

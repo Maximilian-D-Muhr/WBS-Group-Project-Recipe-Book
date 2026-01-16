@@ -2,11 +2,13 @@ import Link from 'next/link';
 import { getAllRecipes } from '@/lib/queries';
 
 /**
- * Home page with recipe grid gallery
+ * Home page with recipe grid gallery (limited to 8 newest recipes)
  * @returns {JSX.Element}
  */
 export default async function HomePage() {
-  const { data: recipes = [] } = await getAllRecipes();
+  const { data: allRecipes = [] } = await getAllRecipes();
+  const recipes = allRecipes.slice(0, 8);
+  const hasMoreRecipes = allRecipes.length > 8;
 
   return (
     <div className="space-y-8">
@@ -50,6 +52,17 @@ export default async function HomePage() {
           </Link>
         ))}
       </section>
+
+      {hasMoreRecipes && (
+        <section className="flex justify-center py-8">
+          <Link
+            href="/recipes"
+            className="btn btn-primary btn-lg"
+          >
+            View More Recipes
+          </Link>
+        </section>
+      )}
     </div>
   );
 }

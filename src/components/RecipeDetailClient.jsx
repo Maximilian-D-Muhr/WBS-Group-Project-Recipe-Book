@@ -3,6 +3,12 @@
 import { useState } from 'react';
 import { addRecipeAction } from '@/app/cookbook/actions';
 
+/**
+ * Interactive recipe detail buttons (add to cookbook)
+ * @param {number} recipeId - Recipe ID
+ * @param {boolean} initialInCookbook - Whether recipe is already in cookbook
+ * @returns {JSX.Element}
+ */
 export default function RecipeDetailClient({ recipeId, inCookbook: initialInCookbook }) {
   const [inCookbook, setInCookbook] = useState(initialInCookbook);
   const [isPending, setIsPending] = useState(false);

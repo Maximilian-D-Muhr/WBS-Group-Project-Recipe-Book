@@ -53,7 +53,8 @@ src/
 │   ├── Footer.jsx               # Footer with project info
 │   ├── RecipeCard.jsx           # Recipe card display
 │   ├── SearchBar.jsx            # Search input (client component)
-│   ├── CookbookClient.jsx       # Cookbook list (client component)
+│   ├── CookbookClient.jsx       # Cookbook list container (client component)
+│   ├── CookbookEntry.jsx        # Individual cookbook entry (client component)
 │   └── RecipeDetailClient.jsx   # Add to cookbook button (client component)
 │
 ├── lib/                          # Utility functions & helpers

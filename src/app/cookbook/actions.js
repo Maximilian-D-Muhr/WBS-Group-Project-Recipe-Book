@@ -69,6 +69,7 @@ export async function updateNoteAction(prevState, formData) {
 
     revalidatePath('/cookbook');
     return { success: true, message: 'Note saved!' };
+    
   } catch (error) {
     return { error: 'Something went wrong' };
   }

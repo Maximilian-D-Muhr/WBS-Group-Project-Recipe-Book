@@ -21,7 +21,12 @@ export default function CookbookClient({ entries }) {
 
   const handleSaveNote = () => {
     setSuccessMessage('Note saved successfully!');
-    setTimeout(() => setSuccessMessage(null), 3000);
+    
+    // setTimeout(() => setSuccessMessage(null), 3000);
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+    
   };
 
   return (

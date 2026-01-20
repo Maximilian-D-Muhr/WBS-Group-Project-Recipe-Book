@@ -188,7 +188,7 @@ Step 7: Season with black pepper and serve immediately',
     10,
     20,
     4,
-    'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1608756687911-aa1599ab3bd9?w=600&h=600&fit=crop'
   ),
   (
     'Caesar Salad',
@@ -221,7 +221,7 @@ Step 9: Cool on baking sheet for 2 minutes, then transfer to wire rack',
     15,
     12,
     24,
-    'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1672073871234-7f2de18b9e5d?w=600&h=600&fit=crop'
   ),
   (
     'Chicken Stir Fry',
@@ -240,7 +240,7 @@ Step 10: Serve hot with rice',
     20,
     15,
     4,
-    'https://images.unsplash.com/photo-1568299869110-461d8dd19601?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1664475934279-2631a25c42ce?w=600&h=600&fit=crop'
   ),
   (
     'Margherita Pizza',
@@ -276,7 +276,7 @@ CHEF''S NOTE: No prep time needed - straight from freezer to your table!',
     1,
     15,
     3,
-    'https://images.unsplash.com/photo-1569718733340-fa203233bf52?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1673439299730-3eea5382e1d2?w=600&h=600&fit=crop'
   ),
   (
     'Instant Noodle Soup',
@@ -293,7 +293,7 @@ PRO TIP: This recipe was perfected over many late-night study sessions',
     2,
     5,
     1,
-    'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1759923593745-6302b220d719?w=600&h=600&fit=crop'
   ),
   (
     'Tomato Soup',
@@ -311,7 +311,7 @@ Step 9: Serve hot with crusty bread',
     10,
     40,
     4,
-    'https://images.unsplash.com/photo-1547592166-7aae4d755b86?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1578020190125-f4f7c18bc9cb?w=600&h=600&fit=crop'
   ),
   (
     'Beef Tacos',
@@ -394,7 +394,7 @@ Step 8: Season with black pepper and serve',
     5,
     15,
     4,
-    'https://images.unsplash.com/photo-1645112411341-6c4ee32510d8?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=600&fit=crop'
   ),
   (
     'Pancakes',
@@ -414,24 +414,6 @@ Step 8: Serve warm with butter',
     'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=600&fit=crop'
   ),
   (
-    'Pad Thai',
-    'Thai street food favorite with rice noodles',
-    '["300g Rice noodles", "200g Shrimp", "2 Eggs", "3 Garlic cloves", "100g Bean sprouts", "2 tbsp Tamarind paste", "Fish sauce", "Lime"]',
-    'Step 1: Soak rice noodles in warm water for 30 minutes
-Step 2: Heat wok over high heat and add oil
-Step 3: Stir-fry shrimp until pink
-Step 4: Push shrimp aside and scramble eggs
-Step 5: Add minced garlic and cook briefly
-Step 6: Add drained noodles and tamarind paste
-Step 7: Toss in fish sauce and mix well
-Step 8: Add bean sprouts and cook for 1 minute
-Step 9: Serve with lime wedges',
-    20,
-    15,
-    2,
-    'https://images.unsplash.com/photo-1481070414601-52ec2a4bacf7?w=600&h=600&fit=crop'
-  ),
-  (
     'Burger',
     'Juicy homemade burger with all the fixings',
     '["400g Ground beef", "4 Burger buns", "4 Lettuce leaves", "4 Tomato slices", "4 Cheese slices", "Onion", "Condiments"]',
@@ -446,7 +428,7 @@ Step 8: Serve immediately',
     10,
     15,
     4,
-    'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1675252369719-dd52bc69c3df?w=600&h=600&fit=crop'
   ),
   (
     'Quesadilla',
@@ -463,7 +445,7 @@ Step 8: Serve with sour cream and salsa',
     10,
     10,
     2,
-    'https://images.unsplash.com/photo-1565229656933-4b7ce993cab9?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1628838233717-be047a0b54fb?w=600&h=600&fit=crop'
   ),
   (
     'Grilled Salmon',
@@ -480,7 +462,7 @@ Step 8: Serve with roasted vegetables',
     5,
     10,
     4,
-    'https://images.unsplash.com/photo-1580959375944-abd7e991b971?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1580959375944-abd7e991f971?w=600&h=600&fit=crop'
   ),
   (
     'Vegetable Curry',
@@ -497,7 +479,7 @@ Step 8: Serve with basmati rice or naan',
     15,
     30,
     4,
-    'https://images.unsplash.com/photo-1476124369162-f0bd1e1b2e25?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1582576163090-09d3b6f8a969?w=600&h=600&fit=crop'
   ),
   (
     'Tiramisu',
@@ -514,7 +496,7 @@ Step 8: Refrigerate for 4 hours before serving',
     20,
     0,
     6,
-    'https://images.unsplash.com/photo-1571877227200-a0fb08a01a09?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1724116379273-ba32b70d112c?w=600&h=600&fit=crop'
   ),
   (
     'Lemon Cake',
@@ -531,7 +513,7 @@ Step 8: Cool and serve with lemon glaze',
     15,
     40,
     8,
-    'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1714942927757-aeba4c2f4200?w=600&h=600&fit=crop'
   ),
   (
     'Fish and Chips',
@@ -548,7 +530,7 @@ Step 8: Enjoy this British classic!',
     15,
     25,
     2,
-    'https://images.unsplash.com/photo-1534080564419-4481377183f0?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1694108747175-889fdc786003?w=600&h=600&fit=crop'
   ),
   (
     'Smoothie Bowl',
@@ -582,7 +564,7 @@ Step 8: Eat immediately while hot',
     10,
     30,
     1,
-    'https://images.unsplash.com/photo-1568050559173-a58ac90e0e6b?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1638866281450-3933540af86a?w=600&h=600&fit=crop'
   ),
   (
     'Caprese Salad',
@@ -599,7 +581,7 @@ Step 8: Serve immediately',
     5,
     0,
     2,
-    'https://images.unsplash.com/photo-1599599810694-b5ac4dd26626?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1677619680472-3130a97bd5d3?w=600&h=600&fit=crop'
   ),
   (
     'Beef Chili',
@@ -616,7 +598,7 @@ Step 8: Serve hot with toppings like sour cream',
     15,
     45,
     6,
-    'https://images.unsplash.com/photo-1585521922961-961b74f0f9d0?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1666819632298-fe15dc7d4c34?w=600&h=600&fit=crop'
   ),
   (
     'Avocado Toast',
@@ -633,24 +615,7 @@ Step 8: Sprinkle with red pepper flakes and serve',
     5,
     10,
     1,
-    'https://images.unsplash.com/photo-1606220945770-6c3cfe3f3330?w=600&h=600&fit=crop'
-  ),
-  (
-    'Guacamole',
-    'Creamy Mexican avocado dip',
-    '["3 Ripe avocados", "1 Lime", "1 Red onion", "Cilantro", "Tomato", "Jalapeño", "Salt", "Tortilla chips"]',
-    'Step 1: Cut avocados in half and remove pits
-Step 2: Scoop into bowl
-Step 3: Mash with fork until desired consistency
-Step 4: Squeeze lime juice over top
-Step 5: Add diced red onion and cilantro
-Step 6: Fold in diced tomato and jalapeño
-Step 7: Season with salt to taste
-Step 8: Serve immediately with tortilla chips',
-    10,
-    0,
-    4,
-    'https://images.unsplash.com/photo-1611214155371-62535016515f?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1687276287139-88f7333c8ca4?w=600&h=600&fit=crop'
   ),
   (
     'Minestrone Soup',
@@ -667,7 +632,7 @@ Step 8: Season with salt, pepper, and fresh basil',
     15,
     35,
     6,
-    'https://images.unsplash.com/photo-1609137253924-643f82d67d12?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1669831178095-005ed789250a?w=600&h=600&fit=crop'
   ),
   (
     'Brownies',
@@ -684,7 +649,7 @@ Step 8: Cool and cut into squares',
     10,
     30,
     12,
-    'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1716152295675-595f7a5a1d54?w=600&h=600&fit=crop'
   ),
   (
     'Shrimp Scampi',
@@ -701,7 +666,7 @@ Step 8: Serve immediately',
     10,
     15,
     4,
-    'https://images.unsplash.com/photo-1604959597512-b659ca7268f4?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1659951226926-a75791782250?w=600&h=600&fit=crop'
   ),
   (
     'Falafel',
@@ -718,7 +683,7 @@ Step 8: Serve with tahini sauce and pita bread',
     15,
     20,
     4,
-    'https://images.unsplash.com/photo-1585238341710-4811eb76ce70?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1663853051660-91bd9b822799?w=600&h=600&fit=crop'
   );
 
 

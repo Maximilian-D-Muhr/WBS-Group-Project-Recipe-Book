@@ -34,7 +34,7 @@ export default async function HomePage() {
                 <img
                   src={recipe.image_url}
                   alt={recipe.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-115 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300 flex items-end">
                   <h3 className="text-white font-bold text-center w-full pb-4 px-2">
@@ -57,7 +57,8 @@ export default async function HomePage() {
         <section className="flex justify-center py-8">
           <Link
             href="/recipes"
-            className="btn btn-primary btn-lg"
+            className="btn color-white btn-lg"
+            // className="btn btn-primary btn-lg"
           >
             View More Recipes
           </Link>

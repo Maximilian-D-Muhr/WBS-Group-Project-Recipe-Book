@@ -221,7 +221,7 @@ Step 9: Cool on baking sheet for 2 minutes, then transfer to wire rack',
     15,
     12,
     24,
-    'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1672073871234-7f2de18b9e5d?w=600&h=600&fit=crop'
   ),
   (
     'Chicken Stir Fry',
@@ -293,7 +293,7 @@ PRO TIP: This recipe was perfected over many late-night study sessions',
     2,
     5,
     1,
-    'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&fit=crop'
+    'https://images.unsplash.com/photo-1759923593745-6302b220d719?w=600&h=600&fit=crop'
   ),
   (
     'Tomato Soup',
@@ -428,7 +428,7 @@ Step 8: Serve immediately',
     10,
     15,
     4,
-    'https://images.unsplash.com/photo-1593618998160-e34014e67546?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1675252369719-dd52bc69c3df?w=600&h=600&fit=crop'
   ),
   (
     'Quesadilla',
@@ -513,7 +513,7 @@ Step 8: Cool and serve with lemon glaze',
     15,
     40,
     8,
-    'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1714942927757-aeba4c2f4200?w=600&h=600&fit=crop'
   ),
   (
     'Fish and Chips',
@@ -649,7 +649,7 @@ Step 8: Cool and cut into squares',
     10,
     30,
     12,
-    'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&h=600&fit=crop'
+    'https://plus.unsplash.com/premium_photo-1716152295675-595f7a5a1d54?w=600&h=600&fit=crop'
   ),
   (
     'Shrimp Scampi',

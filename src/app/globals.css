@@ -12,6 +12,12 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);

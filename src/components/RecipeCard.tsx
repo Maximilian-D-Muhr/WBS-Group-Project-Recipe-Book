@@ -1,11 +1,7 @@
 import Link from 'next/link';
+import type { RecipeCardProps } from '@/types';
 
-/**
- * Individual recipe card preview with circular image, title, description, and time/servings
- * @param {Object} recipe - Recipe data object
- * @returns {JSX.Element}
- */
-export default function RecipeCard({ recipe }) {
+export default function RecipeCard({ recipe }: RecipeCardProps): React.ReactElement {
   const totalTime = recipe.prep_time + recipe.cook_time;
 
   return (

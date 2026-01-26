@@ -57,6 +57,7 @@ export default function CookbookEntry({ entry, onRemove, onSaveNote }) {
         <div className="flex flex-wrap gap-2 mb-4">
           <span className="badge badge-outline">Prep: {entry.prep_time} min</span>
           <span className="badge badge-outline">Cook: {entry.cook_time} min</span>
+          
         </div>
 
         {isEditing ? (

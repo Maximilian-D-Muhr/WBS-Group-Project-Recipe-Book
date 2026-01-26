@@ -10,15 +10,15 @@ export default function Navigation() {
     <nav className="navbar bg-base-100 border-b border-base-300 sticky top-0 z-40">
       <div className="container mx-auto w-full px-4">
         <div className="flex-1">
-          <Link href="/" className="font-bold text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+          <Link href="/" className="font-bold text-3xl bg-violet-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             {APP_TITLE}
           </Link>
         </div>
         <div className="flex-none">
-          <ul className="menu menu-horizontal px-1 gap-1">
+          <ul className="menu menu-horizontal px-1 gap-15">
             {NAV_LINKS.map(({ href, label }) => (
               <li key={href}>
-                <Link href={href} className="btn btn-ghost btn-sm font-medium">
+                <Link href={href} className="btn btn-ghost btn-sm font-medium text-2xl">
                   {label}
                 </Link>
               </li>

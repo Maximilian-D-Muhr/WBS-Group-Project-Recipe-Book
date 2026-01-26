@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className="text-sm opacity-70">
-            WBS Group Project Ben & Max with Lesson 59, Topic 1
+            WBS Group Project Ben & Max - JS then TS refactor
           </p>
         </div>
       </div>

@@ -48,10 +48,20 @@ export default async function RecipeDetailPage({ params }) {
   const totalTime = (recipe.prep_time || 0) + (recipe.cook_time || 0);
 
   return (
-    <article className="max-w-3xl mx-auto px-4 py-8">
+    <article className="max-w-6xl mx-auto px-4">
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{recipe.title}</h1>
         <p className="text-lg text-base-content/70 mb-6">{recipe.description}</p>
+
+        {recipe.image_url && (
+          <div className="w-full max-w-md mx-auto mb-6 aspect-square overflow-hidden rounded-lg shadow-lg">
+            <img
+              src={recipe.image_url}
+              alt={recipe.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
 
         <div className="flex flex-wrap gap-3">
           <span className="badge badge-outline">Prep: {recipe.prep_time} min</span>
@@ -65,7 +75,7 @@ export default async function RecipeDetailPage({ params }) {
         <section>
           <h2 className="text-2xl font-bold mb-4">Ingredients</h2>
           {ingredients.length > 0 ? (
-            <ul className="list-disc list-inside space-y-2">
+            <ul className="list-disc list-inside space-y-2 text-xl">
               {ingredients.map((ingredient, index) => (
                 <li key={index} className="text-base-content/80">
                   {ingredient}
@@ -79,7 +89,7 @@ export default async function RecipeDetailPage({ params }) {
 
         <section>
           <h2 className="text-2xl font-bold mb-4">Instructions</h2>
-          <p className="whitespace-pre-line text-base-content/80">
+          <p className="whitespace-pre-line text-base-content/80 text-xl">
             {recipe.instructions}
           </p>
         </section>

@@ -1,22 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ChangeEvent } from 'react';
 import { removeRecipeAction, updateNoteAction } from '@/app/cookbook/actions';
+import type { CookbookEntryComponentProps } from '@/types';
 
-/**
- * Individual cookbook entry with edit/remove actions
- * @param {Object} entry - Recipe entry with id, title, description, prep_time, cook_time, notes
- * @param {Function} onRemove - Callback when recipe is removed
- * @param {Function} onSaveNote - Callback when note is saved
- * @returns {JSX.Element}
- */
-export default function CookbookEntry({ entry, onRemove, onSaveNote }) {
-  const [isEditing, setIsEditing] = useState(false);
-  const [noteText, setNoteText] = useState(entry.notes || '');
-  const [isSaving, setIsSaving] = useState(false);
-  const [isRemoving, setIsRemoving] = useState(false);
+export default function CookbookEntry({ entry, onRemove, onSaveNote }: CookbookEntryComponentProps): React.ReactElement {
+  const [isEditing, setIsEditing] = useState<boolean>(false);
+  const [noteText, setNoteText] = useState<string>(entry.notes ?? '');
+  const [isSaving, setIsSaving] = useState<boolean>(false);
+  const [isRemoving, setIsRemoving] = useState<boolean>(false);
 
-  const handleRemove = async () => {
+  const handleRemove = async (): Promise<void> => {
     if (!confirm('Are you sure you want to remove this recipe from your cookbook?')) {
       return;
     }
@@ -32,13 +26,13 @@ export default function CookbookEntry({ entry, onRemove, onSaveNote }) {
     }
   };
 
-  const handleSaveNote = async () => {
+  const handleSaveNote = async (): Promise<void> => {
     setIsSaving(true);
     try {
       const formData = new FormData();
       formData.append('cookbookId', entry.id.toString());
       formData.append('notes', noteText);
-      const response = await updateNoteAction({}, formData);
+      const response = await updateNoteAction(null, formData);
       if (!response.error) {
         onSaveNote(entry.id);
         setIsEditing(false);
@@ -46,6 +40,10 @@ export default function CookbookEntry({ entry, onRemove, onSaveNote }) {
     } finally {
       setIsSaving(false);
     }
+  };
+
+  const handleNoteChange = (e: ChangeEvent<HTMLTextAreaElement>): void => {
+    setNoteText(e.target.value);
   };
 
   return (
@@ -57,7 +55,6 @@ export default function CookbookEntry({ entry, onRemove, onSaveNote }) {
         <div className="flex flex-wrap gap-2 mb-4">
           <span className="badge badge-outline">Prep: {entry.prep_time} min</span>
           <span className="badge badge-outline">Cook: {entry.cook_time} min</span>
-          
         </div>
 
         {isEditing ? (
@@ -66,7 +63,7 @@ export default function CookbookEntry({ entry, onRemove, onSaveNote }) {
               className="textarea textarea-bordered w-full"
               placeholder="Add notes about this recipe..."
               value={noteText}
-              onChange={(e) => setNoteText(e.target.value)}
+              onChange={handleNoteChange}
             />
             <div className="flex gap-2">
               <button

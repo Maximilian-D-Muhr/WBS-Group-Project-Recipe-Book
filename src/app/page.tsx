@@ -1,14 +1,11 @@
 import Link from 'next/link';
 import { getAllRecipes } from '@/lib/queries';
+import type { Recipe } from '@/types';
 
-/**
- * Home page with recipe grid gallery (limited to 8 newest recipes)
- * @returns {JSX.Element}
- */
-export default async function HomePage() {
+export default async function HomePage(): Promise<React.ReactElement> {
   const { data: allRecipes = [] } = await getAllRecipes();
-  const recipes = allRecipes.slice(0, 8);
-  const hasMoreRecipes = allRecipes.length > 8;
+  const recipes: Recipe[] = allRecipes?.slice(0, 8) ?? [];
+  const hasMoreRecipes = (allRecipes?.length ?? 0) > 8;
 
   return (
     <div className="space-y-8">
@@ -58,7 +55,6 @@ export default async function HomePage() {
           <Link
             href="/recipes"
             className="btn color-white btn-lg"
-            // className="btn btn-primary btn-lg"
           >
             View More Recipes
           </Link>

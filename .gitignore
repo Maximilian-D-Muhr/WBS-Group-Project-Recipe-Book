@@ -42,6 +42,6 @@ next-env.d.ts
 
 # local only (not synced to git)
 .local/
+.claude/
 CLAUDE.md
-only\ lokal\ not\ git/
-only\ lokal\ nicht\ git/
+only_local/

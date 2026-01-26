@@ -1,11 +1,7 @@
 import Link from 'next/link';
 import { NAV_LINKS, APP_TITLE } from '@/lib/constants';
 
-/**
- * Navigation header with site title and main menu links
- * @returns {JSX.Element}
- */
-export default function Navigation() {
+export default function Navigation(): React.ReactElement {
   return (
     <nav className="navbar bg-base-100 border-b border-base-300 sticky top-0 z-40">
       <div className="container mx-auto w-full px-4">

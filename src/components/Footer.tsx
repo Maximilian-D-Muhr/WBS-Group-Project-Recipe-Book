@@ -1,10 +1,4 @@
-import { APP_TITLE } from '@/lib/constants';
-
-/**
- * Footer with copyright and project information
- * @returns {JSX.Element}
- */
-export default function Footer() {
+export default function Footer(): React.ReactElement {
   return (
     <footer className="bg-base-200 text-base-content py-8 border-t">
       <div className="container mx-auto px-4">

@@ -1,18 +1,14 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, type FormEvent, type ChangeEvent } from 'react';
 
-/**
- * Search form for filtering recipes by title or description
- * @returns {JSX.Element}
- */
-export default function SearchBar() {
+export default function SearchBar(): React.ReactElement {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get('q') || '');
+  const [search, setSearch] = useState<string>(searchParams.get('q') ?? '');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const trimmed = search.trim();
     if (trimmed) {
@@ -22,12 +18,16 @@ export default function SearchBar() {
     }
   };
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
+    setSearch(e.target.value);
+  };
+
   return (
     <form onSubmit={handleSubmit} className="flex gap-2 max-w-md mx-auto">
       <input
         type="text"
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={handleChange}
         placeholder="Search recipes..."
         className="input input-bordered flex-grow"
       />

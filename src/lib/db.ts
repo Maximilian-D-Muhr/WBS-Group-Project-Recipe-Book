@@ -1,11 +1,9 @@
-import pg from 'pg';
+import { Pool } from 'pg';
+import type { QueryResult } from '@/types';
 
-const { Pool } = pg;
+let pool: Pool | null = null;
 
-// Singleton Pattern - one connection pool for the whole app
-let pool = null;
-
-export function getPool() {
+export function getPool(): Pool {
   if (!pool) {
     if (!process.env.DATABASE_URL) {
       throw new Error('DATABASE_URL environment variable is not set');
@@ -22,21 +20,19 @@ export function getPool() {
   return pool;
 }
 
-// Helper function to execute queries
-export async function query(text, params) {
-  const pool = getPool();
+export async function query<T>(text: string, params?: unknown[]): Promise<QueryResult<T[]>> {
+  const dbPool = getPool();
   try {
-    const result = await pool.query(text, params);
-    return { data: result.rows, error: null };
-  } catch (error) {
+    const result = await dbPool.query(text, params);
+    return { data: result.rows as T[], error: null };
+  } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('Database Error:', errorMessage);
     return { data: null, error: errorMessage };
   }
 }
 
-// Graceful shutdown for clean pool closure
-export async function closePool() {
+export async function closePool(): Promise<void> {
   if (pool) {
     await pool.end();
     pool = null;

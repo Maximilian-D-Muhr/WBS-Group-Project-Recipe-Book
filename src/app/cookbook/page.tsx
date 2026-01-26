@@ -1,7 +1,7 @@
 import { getCookbookEntries } from '@/lib/queries';
 import CookbookClient from '@/components/CookbookClient';
 
-export default async function CookbookPage() {
+export default async function CookbookPage(): Promise<React.ReactElement> {
   const { data: entries, error } = await getCookbookEntries();
 
   return (

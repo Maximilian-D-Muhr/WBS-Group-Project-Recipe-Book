@@ -4,7 +4,7 @@ export default function Footer(): React.ReactElement {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <p className="text-sm opacity-70">
-            WBS Group Project Ben & Max - JS then TS refactor
+            WBS Group Project Ben & Max - JS to TS refactored
           </p>
         </div>
       </div>

@@ -2,31 +2,23 @@
 
 import { useState } from 'react';
 import CookbookEntry from './CookbookEntry';
+import type { CookbookClientProps, CookbookEntry as CookbookEntryType, CookbookEntryId } from '@/types';
 
-/**
- * Container for cookbook entries with alert messages
- * @param {Array} entries - Array of cookbook recipe entries
- * @returns {JSX.Element}
- */
-export default function CookbookClient({ entries }) {
-  const [error, setError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(null);
-  const [visibleEntries, setVisibleEntries] = useState(entries);
+export default function CookbookClient({ entries }: CookbookClientProps): React.ReactElement {
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [visibleEntries, setVisibleEntries] = useState<CookbookEntryType[]>(entries);
 
-  const handleRemove = (entryId) => {
+  const handleRemove = (entryId: CookbookEntryId): void => {
     setVisibleEntries(visibleEntries.filter((e) => e.id !== entryId));
     setSuccessMessage('Recipe removed successfully!');
     setTimeout(() => setSuccessMessage(null), 3000);
   };
 
-  const handleSaveNote = () => {
+  const handleSaveNote = (): void => {
     setSuccessMessage('Note saved successfully!');
-    
-    // setTimeout(() => setSuccessMessage(null), 3000);
     setTimeout(() => {
       window.location.reload();
     }, 2000);
-    
   };
 
   return (
@@ -34,11 +26,6 @@ export default function CookbookClient({ entries }) {
       {successMessage && (
         <div className="alert alert-success" role="status">
           <span>{successMessage}</span>
-        </div>
-      )}
-      {error && (
-        <div className="alert alert-error" role="alert">
-          <span>{error}</span>
         </div>
       )}
       {visibleEntries.map((entry) => (

@@ -1,27 +1,25 @@
 import { getAllRecipes, searchRecipes } from '@/lib/queries';
 import SearchBar from '@/components/SearchBar';
 import RecipeCard from '@/components/RecipeCard';
+import type { Recipe, RecipesSearchParams } from '@/types';
 
-/**
- * All recipes page with search and limit of 100 recipes per page
- * @returns {JSX.Element}
- */
-export default async function RecipesPage({ searchParams }) {
+const RECIPES_LIMIT = 100;
+
+export default async function RecipesPage({ searchParams }: RecipesSearchParams): Promise<React.ReactElement> {
   const { q } = await searchParams;
-  const RECIPES_LIMIT = 100;
 
-  let recipes = [];
-  let error = null;
+  let recipes: Recipe[] = [];
+  let error: string | null = null;
   let totalCount = 0;
 
   if (q && q.trim()) {
     const result = await searchRecipes(q);
-    recipes = result.data || [];
+    recipes = result.data ?? [];
     error = result.error;
     totalCount = recipes.length;
   } else {
     const result = await getAllRecipes();
-    const allRecipes = result.data || [];
+    const allRecipes = result.data ?? [];
     error = result.error;
     totalCount = allRecipes.length;
     recipes = allRecipes.slice(0, RECIPES_LIMIT);

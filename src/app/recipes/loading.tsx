@@ -1,4 +1,4 @@
-export default function RecipesLoading() {
+export default function RecipesLoading(): React.ReactElement {
   return (
     <div className="space-y-8">
       <section>

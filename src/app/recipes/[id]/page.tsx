@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
 import { getRecipeById, isInCookbook } from '@/lib/queries';
 import RecipeDetailClient from '@/components/RecipeDetailClient';
+import type { RecipePageParams } from '@/types';
 
-export default async function RecipeDetailPage({ params }) {
+export default async function RecipeDetailPage({ params }: RecipePageParams): Promise<React.ReactElement> {
   const { id } = await params;
   const recipeId = parseInt(id);
   const { data: recipe, error } = await getRecipeById(recipeId);
@@ -12,40 +13,37 @@ export default async function RecipeDetailPage({ params }) {
     notFound();
   }
 
-  let ingredients = [];
+  let ingredients: string[] = [];
   try {
-    // Handle ingredients that might be a Buffer, object, or string from database
     let ingredientsStr = '[]';
 
     if (recipe.ingredients) {
       if (typeof recipe.ingredients === 'string') {
         ingredientsStr = recipe.ingredients;
       } else if (Buffer.isBuffer(recipe.ingredients)) {
-        // Convert Buffer to string
         ingredientsStr = recipe.ingredients.toString('utf-8');
       } else if (typeof recipe.ingredients === 'object') {
-        // Already parsed object
         ingredientsStr = JSON.stringify(recipe.ingredients);
       } else {
-        // Fallback to empty array
         ingredientsStr = '[]';
       }
     }
 
-    // Trim whitespace
     ingredientsStr = ingredientsStr.trim();
 
-    const parsed = JSON.parse(ingredientsStr);
-    // If it's an array, use it directly; if it's an object, extract values
-    ingredients = Array.isArray(parsed)
-      ? parsed.map(ing => typeof ing === 'string' ? ing : (ing.item || JSON.stringify(ing)))
-      : [];
-  } catch (e) {
-    // If JSON parsing fails, fall back to empty array
-    console.error('Failed to parse ingredients for recipe', recipeId, ':', e.message);
+    const parsed: unknown = JSON.parse(ingredientsStr);
+    if (Array.isArray(parsed)) {
+      ingredients = parsed.map((ing: unknown) =>
+        typeof ing === 'string' ? ing : ((ing as { item?: string }).item ?? JSON.stringify(ing))
+      );
+    }
+  } catch (e: unknown) {
+    const errorMessage = e instanceof Error ? e.message : 'Unknown error';
+    console.error('Failed to parse ingredients for recipe', recipeId, ':', errorMessage);
     ingredients = [];
   }
-  const totalTime = (recipe.prep_time || 0) + (recipe.cook_time || 0);
+
+  const totalTime = (recipe.prep_time ?? 0) + (recipe.cook_time ?? 0);
 
   return (
     <article className="max-w-6xl mx-auto px-4">
@@ -95,7 +93,7 @@ export default async function RecipeDetailPage({ params }) {
         </section>
       </div>
 
-      <RecipeDetailClient recipeId={recipeId} inCookbook={inCookbookData || false} />
+      <RecipeDetailClient recipeId={recipeId} inCookbook={inCookbookData ?? false} />
     </article>
   );
 }
